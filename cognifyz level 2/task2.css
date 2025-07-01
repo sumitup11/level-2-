@@ -1,0 +1,334 @@
+/* task2.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+    color: #22223b;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60, 72, 88, 0.12);
+    padding: 40px 32px;
+}
+
+h1, h2, h3 {
+    color: #3a5a98;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+ul, ol {
+    margin-left: 24px;
+    margin-bottom: 18px;
+}
+
+a {
+    color: #5e60ce;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #3a0ca3;
+    text-decoration: underline;
+}
+
+button, .btn {
+    background: linear-gradient(90deg, #5e60ce 0%, #4361ee 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.08);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #4361ee 0%, #5e60ce 100%);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #bfc9d9;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    background: #f4f7fa;
+    transition: border 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #5e60ce;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 8px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Add card component styles */
+.card {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(60, 72, 88, 0.10);
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(60, 72, 88, 0.16);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #3a5a98;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-content {
+    font-size: 1rem;
+    color: #22223b;
+    line-height: 1.6;
+}
+
+/* Add utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: 16px;
+}
+
+/* Add subtle animated gradient border to .container */
+.container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    z-index: -1;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #5e60ce, #4361ee, #b5179e, #5e60ce);
+    background-size: 300% 300%;
+    animation: gradientBorder 6s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add glassmorphism effect to .card */
+.card {
+    background: rgba(248, 250, 252, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(94, 96, 206, 0.08);
+}
+
+/* Add animated underline to links */
+a {
+    position: relative;
+    overflow: hidden;
+}
+
+a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #5e60ce, #4361ee);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Add floating button effect */
+button, .btn {
+    box-shadow: 0 4px 16px rgba(94, 96, 206, 0.15), 0 1.5px 4px rgba(60, 72, 88, 0.08);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+button:active, .btn:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+/* Add subtle input focus glow */
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 2px #b5179e33;
+}
+
+/* Add fade-in animation to .card */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.7s cubic-bezier(.39, .575, .565, 1) both;
+}
+
+/* Responsive card grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* Add a soft shadow to headings */
+h1, h2, h3 {
+    text-shadow: 0 2px 8px rgba(94, 96, 206, 0.08);
+}
+
+/* Base styles for cards and container */
+body {
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 2px;
+    }
+
+    .card-img-top {
+        height: 120px;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
